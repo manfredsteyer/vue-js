@@ -14,7 +14,7 @@ module.exports = () => {
     output: {
       filename: '[bundle].js',
       publicPath: "auto",
-      uniqueName: "mfe_vue",
+      uniqueName: "vue",
       chunkFilename: '[name].js',
     },
     module: {
@@ -44,8 +44,8 @@ module.exports = () => {
       new ModuleFederationPlugin({
 
         // For remotes (please adjust)
-        name: "mfe_vue",
-        library: { type: "var", name: "mfe_vue" },
+        name: "vue",
+        library: { type: "var", name: "vue" },
         filename: "remoteEntry.js",
         exposes: {
           './web-components': './src/main.js',
