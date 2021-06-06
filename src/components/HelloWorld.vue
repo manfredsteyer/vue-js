@@ -4,6 +4,9 @@
       {{ msg }}
       <img alt="Vue logo" src="https://cli.vuejs.org/favicon.png" height="30">
     </h1>
+    <p>
+      Vue Version: {{ version }}
+    </p>
   </div>
 </template>
 
@@ -11,7 +14,11 @@
 export default {
   name: 'HelloWorld',
   props: {  
-    msg: String
+    msg: String,
+    version: {
+      type: String,
+      default: require('../../package.json').dependencies.vue
+    }
   }
 }
 </script>
